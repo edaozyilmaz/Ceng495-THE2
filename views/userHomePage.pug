@@ -23,7 +23,7 @@ form(method='get' action='/drop')
 for prods in JSON.parse(allInventions)
    form(action='/rate' method='post' style='display : inline')
 
-       img(style='display: inline; margin-left: 175px; margin-top: 100px' src= prods.photo width='200' height='100' class='center')
+       img(style='display: inline; margin-left: 175px; margin-top: 30px' src= prods.photo width='200' height='100' class='center')
 
        table(name='product_name' style='display: inline; margin-left: 100px; margin-right: 100px ' width='300' height='146')
              tr
