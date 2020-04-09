@@ -1,0 +1,47 @@
+doctype html
+link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous')
+head
+    meta(charset='UTF-8')
+    title Invention Gallery
+
+form(method='post' action='/exhibit')
+        | Enter product name :
+        input(type='text' placeholder='Product name' name='product_name' required='')
+        br
+        br
+        | Enter cost :
+        input(type='text' placeholder='Cost' name='cost' required='')
+        br
+        br
+        | Enter inventors name :
+        input(type='text' placeholder='Inventors name' name='inventors_name' required='')
+        br
+        br
+        | Enter materials used :
+        input(type='text' placeholder='Materials' name='materials_used' required='')
+        br
+        br
+        | Enter link of the invention photo :
+        input(type='text' placeholder='Link' name='photo' required='')
+        br
+        br
+        | Enter an optional element type (not necessary) :
+        input(type='text' placeholder='Optional' name='type1')
+        br
+        | Enter an optional element (not necessary) :
+        input(type='text' placeholder='Optional' name='optional1')
+        br
+        br
+        | Enter an optional element type (not necessary) :
+        input(type='text' placeholder='Optional' name='type2')
+        br
+        | Enter an optional element (not necessary) :
+        input(type='text' placeholder='Optional' name='optional2')
+        br
+        br
+        button.btn.btn-primary(type='submit' style='margin-left: 25px') Exhibit
+        br
+        br
+        |The optional element can be can be empty, the invention date, patent number,
+        | dedication, some advertisement quotes, etc.
+

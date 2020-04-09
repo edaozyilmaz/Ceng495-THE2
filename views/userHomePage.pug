@@ -1,0 +1,60 @@
+doctype html
+link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous')
+head
+    meta(charset='UTF-8')
+    title Invention Gallery
+form( method='get' action='userHomePage')
+    div.form-group
+        .jumbotron(style="text-align: center;")
+            div(style='display: inline')
+            h5(style='margin-left: 100px') Username: #{user_name}
+            h5(style='margin-left: 100px') Rating:  #{rating}
+            h5(style='margin-left: 100px') Gallery
+
+form(method='get' action='/exhibit')
+    button.btn.btn-primary(type='submit' style='margin-left: 25px') Add Invention
+
+br
+br
+
+form(method='get' action='/drop')
+    button.btn.btn-primary(type='submit' style='margin-left: 25px') Drop Invention
+
+for prods in JSON.parse(allInventions)
+   form(action='/rate' method='post' style='display : inline')
+
+       img(style='display: inline; margin-left: 175px; margin-top: 100px' src= prods.photo width='200' height='100' class='center')
+
+       table(name='product_name' style='display: inline; margin-left: 100px; margin-right: 100px ' width='300' height='146')
+             tr
+                  td Product Name :
+                  td  #{prods.name}
+             tr
+                   td Price :
+                   td #{prods.cost}
+             tr
+                   td Inventors Name :
+                   td #{prods.user_name}
+             tr
+                   td Materials Used :
+                   td #{prods.materials}
+             tr
+                   td Product Rating :
+                   td #{prods.avgRating}
+             tr
+                   td #{prods.optional1[0]} :
+                   td #{prods.optional1[1]}
+             tr
+                   td #{prods.optional2[0]} :
+                   td #{prods.optional2[1]}
+       | Rate (Between 1-5) :
+       input(type='text' placeholder='0' maxlength="4" name='rating' required='')
+       input(type='hidden' value = prods.name name='product_name')
+       input(type='hidden' value = prods.cost name='cost')
+       input(type='hidden' value = prods.user_name name='inventors_name')
+       input(type='hidden' value = prods.materials name='materials_used')
+       input(type='hidden' value = prods.avgRating name='avg_rating')
+       button.btn.btn-primary(type='submit' style='margin-left: 15px') Rate
+   br
+   br
+

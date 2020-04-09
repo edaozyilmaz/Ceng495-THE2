@@ -1,0 +1,17 @@
+doctype html
+link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous')
+head
+    meta(charset='UTF-8')
+    title Invention Gallery
+
+form(method='post' action='/drop')
+     | Enter product name to drop :
+     input(type='text' placeholder='Product name' name='product_name')
+     br
+     br
+     | Invention must be yours to drop.
+     br
+     br
+     button.btn.btn-primary(type='submit' style='margin-left: 25px') Drop
+
+
